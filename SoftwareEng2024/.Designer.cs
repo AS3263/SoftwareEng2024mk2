@@ -37,18 +37,18 @@
             this.txtUserInput = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.Profile = new System.Windows.Forms.Button();
-            this.Home = new System.Windows.Forms.Button();
-            this.ChatBox_Button = new System.Windows.Forms.Button();
-            this.Event = new System.Windows.Forms.Button();
-            this.Membership = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.Memebrship_icon = new System.Windows.Forms.PictureBox();
+            this.Profile = new System.Windows.Forms.Button();
             this.Event_icon = new System.Windows.Forms.PictureBox();
+            this.Home = new System.Windows.Forms.Button();
             this.Chat_icon = new System.Windows.Forms.PictureBox();
+            this.ChatBox_Button = new System.Windows.Forms.Button();
             this.Home_icon = new System.Windows.Forms.PictureBox();
+            this.Event = new System.Windows.Forms.Button();
             this.Profile_icon = new System.Windows.Forms.PictureBox();
+            this.Membership = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -166,61 +166,6 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(68, 672);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(105, 32);
-            this.btnLogout.TabIndex = 43;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // Profile
-            // 
-            this.Profile.Location = new System.Drawing.Point(68, 104);
-            this.Profile.Name = "Profile";
-            this.Profile.Size = new System.Drawing.Size(105, 34);
-            this.Profile.TabIndex = 33;
-            this.Profile.Text = "Profile";
-            this.Profile.UseVisualStyleBackColor = true;
-            // 
-            // Home
-            // 
-            this.Home.Location = new System.Drawing.Point(68, 56);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(105, 34);
-            this.Home.TabIndex = 34;
-            this.Home.Text = "Home";
-            this.Home.UseVisualStyleBackColor = true;
-            // 
-            // ChatBox_Button
-            // 
-            this.ChatBox_Button.Location = new System.Drawing.Point(68, 151);
-            this.ChatBox_Button.Name = "ChatBox_Button";
-            this.ChatBox_Button.Size = new System.Drawing.Size(105, 32);
-            this.ChatBox_Button.TabIndex = 35;
-            this.ChatBox_Button.Text = "ChatBox";
-            this.ChatBox_Button.UseVisualStyleBackColor = true;
-            // 
-            // Event
-            // 
-            this.Event.Location = new System.Drawing.Point(68, 191);
-            this.Event.Name = "Event";
-            this.Event.Size = new System.Drawing.Size(105, 35);
-            this.Event.TabIndex = 36;
-            this.Event.Text = "Event";
-            this.Event.UseVisualStyleBackColor = true;
-            // 
-            // Membership
-            // 
-            this.Membership.Location = new System.Drawing.Point(68, 236);
-            this.Membership.Name = "Membership";
-            this.Membership.Size = new System.Drawing.Size(105, 32);
-            this.Membership.TabIndex = 37;
-            this.Membership.Text = "Membership";
-            this.Membership.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SoftwareEng2024.Properties.Resources.logout;
@@ -230,6 +175,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(68, 672);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(105, 32);
+            this.btnLogout.TabIndex = 43;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Memebrship_icon
             // 
@@ -241,6 +196,15 @@
             this.Memebrship_icon.TabIndex = 42;
             this.Memebrship_icon.TabStop = false;
             // 
+            // Profile
+            // 
+            this.Profile.Location = new System.Drawing.Point(68, 104);
+            this.Profile.Name = "Profile";
+            this.Profile.Size = new System.Drawing.Size(105, 34);
+            this.Profile.TabIndex = 33;
+            this.Profile.Text = "Profile";
+            this.Profile.UseVisualStyleBackColor = true;
+            // 
             // Event_icon
             // 
             this.Event_icon.Image = global::SoftwareEng2024.Properties.Resources.calendar_check;
@@ -250,6 +214,15 @@
             this.Event_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Event_icon.TabIndex = 41;
             this.Event_icon.TabStop = false;
+            // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(68, 56);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(105, 34);
+            this.Home.TabIndex = 34;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
             // 
             // Chat_icon
             // 
@@ -261,6 +234,15 @@
             this.Chat_icon.TabIndex = 40;
             this.Chat_icon.TabStop = false;
             // 
+            // ChatBox_Button
+            // 
+            this.ChatBox_Button.Location = new System.Drawing.Point(68, 151);
+            this.ChatBox_Button.Name = "ChatBox_Button";
+            this.ChatBox_Button.Size = new System.Drawing.Size(105, 32);
+            this.ChatBox_Button.TabIndex = 35;
+            this.ChatBox_Button.Text = "ChatBox";
+            this.ChatBox_Button.UseVisualStyleBackColor = true;
+            // 
             // Home_icon
             // 
             this.Home_icon.Image = global::SoftwareEng2024.Properties.Resources.home;
@@ -270,6 +252,15 @@
             this.Home_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Home_icon.TabIndex = 39;
             this.Home_icon.TabStop = false;
+            // 
+            // Event
+            // 
+            this.Event.Location = new System.Drawing.Point(68, 191);
+            this.Event.Name = "Event";
+            this.Event.Size = new System.Drawing.Size(105, 35);
+            this.Event.TabIndex = 36;
+            this.Event.Text = "Event";
+            this.Event.UseVisualStyleBackColor = true;
             // 
             // Profile_icon
             // 
@@ -281,6 +272,15 @@
             this.Profile_icon.TabIndex = 38;
             this.Profile_icon.TabStop = false;
             // 
+            // Membership
+            // 
+            this.Membership.Location = new System.Drawing.Point(68, 236);
+            this.Membership.Name = "Membership";
+            this.Membership.Size = new System.Drawing.Size(105, 32);
+            this.Membership.TabIndex = 37;
+            this.Membership.Text = "Membership";
+            this.Membership.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,6 +289,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

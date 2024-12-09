@@ -263,5 +263,18 @@ namespace SoftwareEng2024
         {
 
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Event_Click(object sender, EventArgs e)
+        {
+            Events_Main eventsMain = new Events_Main();
+
+            // Show the Events_Main form
+            eventsMain.Show();
+        }
     }
 }

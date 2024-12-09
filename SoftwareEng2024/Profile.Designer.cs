@@ -30,10 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.lblname = new System.Windows.Forms.Label();
+            this.lblinterest = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbljoindate = new System.Windows.Forms.Label();
+            this.lblemail = new System.Windows.Forms.Label();
+            this.lblmembershiptype = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.Home = new System.Windows.Forms.Button();
@@ -49,16 +52,13 @@
             this.Event_icon = new System.Windows.Forms.PictureBox();
             this.Memebrship_icon = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.panelContent = new System.Windows.Forms.Panel();
-            this.lblname = new System.Windows.Forms.Label();
-            this.lblinterest = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbljoindate = new System.Windows.Forms.Label();
-            this.lblemail = new System.Windows.Forms.Label();
-            this.lblmembershiptype = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelContent.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Profile_icon)).BeginInit();
@@ -66,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Chat_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Event_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Memebrship_icon)).BeginInit();
-            this.panelContent.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,54 +78,94 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(861, 644);
+            this.panel1.Size = new System.Drawing.Size(962, 647);
             this.panel1.TabIndex = 0;
             // 
-            // panel3
+            // panelContent
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightCoral;
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(861, 152);
-            this.panel3.TabIndex = 30;
+            this.panelContent.BackColor = System.Drawing.Color.LightGray;
+            this.panelContent.Controls.Add(this.lblname);
+            this.panelContent.Controls.Add(this.lblinterest);
+            this.panelContent.Controls.Add(this.label6);
+            this.panelContent.Controls.Add(this.lbljoindate);
+            this.panelContent.Controls.Add(this.lblemail);
+            this.panelContent.Controls.Add(this.lblmembershiptype);
+            this.panelContent.Location = new System.Drawing.Point(208, 158);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(742, 331);
+            this.panelContent.TabIndex = 56;
             // 
-            // button2
+            // lblname
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::SoftwareEng2024.Properties.Resources.menu;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(12, 105);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 38);
-            this.button2.TabIndex = 11;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.lblname.AutoSize = true;
+            this.lblname.BackColor = System.Drawing.Color.Transparent;
+            this.lblname.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblname.ForeColor = System.Drawing.Color.Black;
+            this.lblname.Location = new System.Drawing.Point(18, 94);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(84, 23);
+            this.lblname.TabIndex = 18;
+            this.lblname.Text = "Name :";
             // 
-            // label4
+            // lblinterest
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(66, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(260, 48);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "CAMBRIDGE";
+            this.lblinterest.AutoSize = true;
+            this.lblinterest.BackColor = System.Drawing.Color.Transparent;
+            this.lblinterest.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinterest.ForeColor = System.Drawing.Color.Black;
+            this.lblinterest.Location = new System.Drawing.Point(18, 132);
+            this.lblinterest.Name = "lblinterest";
+            this.lblinterest.Size = new System.Drawing.Size(99, 23);
+            this.lblinterest.TabIndex = 19;
+            this.lblinterest.Text = "Intrest : ";
             // 
-            // label2
+            // label6
             // 
-            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Brown;
-            this.label2.Location = new System.Drawing.Point(61, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(275, 106);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Together \r\nCulture";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(14, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 48);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Profile";
+            // 
+            // lbljoindate
+            // 
+            this.lbljoindate.AutoSize = true;
+            this.lbljoindate.BackColor = System.Drawing.Color.Transparent;
+            this.lbljoindate.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbljoindate.ForeColor = System.Drawing.Color.Black;
+            this.lbljoindate.Location = new System.Drawing.Point(18, 253);
+            this.lbljoindate.Name = "lbljoindate";
+            this.lbljoindate.Size = new System.Drawing.Size(126, 23);
+            this.lbljoindate.TabIndex = 22;
+            this.lbljoindate.Text = "Join Date : ";
+            // 
+            // lblemail
+            // 
+            this.lblemail.AutoSize = true;
+            this.lblemail.BackColor = System.Drawing.Color.Transparent;
+            this.lblemail.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblemail.ForeColor = System.Drawing.Color.Black;
+            this.lblemail.Location = new System.Drawing.Point(17, 171);
+            this.lblemail.Name = "lblemail";
+            this.lblemail.Size = new System.Drawing.Size(68, 23);
+            this.lblemail.TabIndex = 20;
+            this.lblemail.Text = "Email";
+            // 
+            // lblmembershiptype
+            // 
+            this.lblmembershiptype.AutoSize = true;
+            this.lblmembershiptype.BackColor = System.Drawing.Color.Transparent;
+            this.lblmembershiptype.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmembershiptype.ForeColor = System.Drawing.Color.Black;
+            this.lblmembershiptype.Location = new System.Drawing.Point(18, 211);
+            this.lblmembershiptype.Name = "lblmembershiptype";
+            this.lblmembershiptype.Size = new System.Drawing.Size(219, 23);
+            this.lblmembershiptype.TabIndex = 21;
+            this.lblmembershiptype.Text = "Membership Type : ";
             // 
             // panel4
             // 
@@ -147,7 +187,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 152);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 492);
+            this.panel4.Size = new System.Drawing.Size(200, 495);
             this.panel4.TabIndex = 55;
             // 
             // button4
@@ -282,91 +322,51 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // panelContent
+            // panel3
             // 
-            this.panelContent.BackColor = System.Drawing.Color.LightGray;
-            this.panelContent.Controls.Add(this.lblname);
-            this.panelContent.Controls.Add(this.lblinterest);
-            this.panelContent.Controls.Add(this.label6);
-            this.panelContent.Controls.Add(this.lbljoindate);
-            this.panelContent.Controls.Add(this.lblemail);
-            this.panelContent.Controls.Add(this.lblmembershiptype);
-            this.panelContent.Location = new System.Drawing.Point(208, 158);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(572, 331);
-            this.panelContent.TabIndex = 56;
+            this.panel3.BackColor = System.Drawing.Color.LightCoral;
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(962, 152);
+            this.panel3.TabIndex = 30;
             // 
-            // lblname
+            // button2
             // 
-            this.lblname.AutoSize = true;
-            this.lblname.BackColor = System.Drawing.Color.Transparent;
-            this.lblname.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblname.ForeColor = System.Drawing.Color.Black;
-            this.lblname.Location = new System.Drawing.Point(18, 94);
-            this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(84, 23);
-            this.lblname.TabIndex = 18;
-            this.lblname.Text = "Name :";
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::SoftwareEng2024.Properties.Resources.menu;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(12, 105);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(48, 38);
+            this.button2.TabIndex = 11;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // lblinterest
+            // label4
             // 
-            this.lblinterest.AutoSize = true;
-            this.lblinterest.BackColor = System.Drawing.Color.Transparent;
-            this.lblinterest.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblinterest.ForeColor = System.Drawing.Color.Black;
-            this.lblinterest.Location = new System.Drawing.Point(18, 132);
-            this.lblinterest.Name = "lblinterest";
-            this.lblinterest.Size = new System.Drawing.Size(99, 23);
-            this.lblinterest.TabIndex = 19;
-            this.lblinterest.Text = "Intrest : ";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(66, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(260, 48);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "CAMBRIDGE";
             // 
-            // label6
+            // label2
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(14, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 48);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Profile";
-            // 
-            // lbljoindate
-            // 
-            this.lbljoindate.AutoSize = true;
-            this.lbljoindate.BackColor = System.Drawing.Color.Transparent;
-            this.lbljoindate.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbljoindate.ForeColor = System.Drawing.Color.Black;
-            this.lbljoindate.Location = new System.Drawing.Point(18, 253);
-            this.lbljoindate.Name = "lbljoindate";
-            this.lbljoindate.Size = new System.Drawing.Size(126, 23);
-            this.lbljoindate.TabIndex = 22;
-            this.lbljoindate.Text = "Join Date : ";
-            // 
-            // lblemail
-            // 
-            this.lblemail.AutoSize = true;
-            this.lblemail.BackColor = System.Drawing.Color.Transparent;
-            this.lblemail.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblemail.ForeColor = System.Drawing.Color.Black;
-            this.lblemail.Location = new System.Drawing.Point(17, 171);
-            this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(68, 23);
-            this.lblemail.TabIndex = 20;
-            this.lblemail.Text = "Email";
-            // 
-            // lblmembershiptype
-            // 
-            this.lblmembershiptype.AutoSize = true;
-            this.lblmembershiptype.BackColor = System.Drawing.Color.Transparent;
-            this.lblmembershiptype.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmembershiptype.ForeColor = System.Drawing.Color.Black;
-            this.lblmembershiptype.Location = new System.Drawing.Point(18, 211);
-            this.lblmembershiptype.Name = "lblmembershiptype";
-            this.lblmembershiptype.Size = new System.Drawing.Size(219, 23);
-            this.lblmembershiptype.TabIndex = 21;
-            this.lblmembershiptype.Text = "Membership Type : ";
+            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Brown;
+            this.label2.Location = new System.Drawing.Point(61, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(275, 106);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Together \r\nCulture";
             // 
             // timer1
             // 
@@ -377,14 +377,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 644);
+            this.ClientSize = new System.Drawing.Size(962, 647);
             this.Controls.Add(this.panel1);
             this.Name = "Profile";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelContent.ResumeLayout(false);
+            this.panelContent.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Profile_icon)).EndInit();
@@ -392,8 +392,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Chat_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Event_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Memebrship_icon)).EndInit();
-            this.panelContent.ResumeLayout(false);
-            this.panelContent.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
