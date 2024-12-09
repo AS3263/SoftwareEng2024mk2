@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -38,17 +39,16 @@ namespace SoftwareEng2024
         {
             try
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ashwin\Source\Repos\SoftwareEngabinavandash\SoftwareEng2024\Database2.mdf;Integrated Security=True";
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                string connectionString = ConfigurationManager.ConnectionStrings["UserDatabaseConnection"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    connection.Open();
 
                     // Step 1: Get MembershipTypeID for the member
                     int membershipTypeId = 0;
                     string memberQuery = "SELECT MembershipTypeID FROM Members WHERE MemberID = @MemberID";
 
-                    using (SqlCommand cmd = new SqlCommand(memberQuery, conn))
+                    using (SqlCommand cmd = new SqlCommand(memberQuery, connection))
                     {
                         cmd.Parameters.AddWithValue("@MemberID", memberId);
                         object result = cmd.ExecuteScalar();
@@ -67,7 +67,7 @@ namespace SoftwareEng2024
                     // Step 2: Fetch all benefits based on MembershipTypeID logic
                     string benefitsQuery = "SELECT BenefitName, Description, ApplicableMembershipTypeID FROM Benefits";
 
-                    using (SqlCommand cmd = new SqlCommand(benefitsQuery, conn))
+                    using (SqlCommand cmd = new SqlCommand(benefitsQuery, connection))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
