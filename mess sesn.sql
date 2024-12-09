@@ -1,0 +1,2 @@
+﻿
+ALTER TABLE Messages ADD IsRead BIT NOT NULL DEFAULT(0);
