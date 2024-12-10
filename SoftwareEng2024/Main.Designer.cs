@@ -33,6 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGuest = new System.Windows.Forms.Button();
             this.btnSignup = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.loginbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +43,8 @@
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
             this.panel1.BackgroundImage = global::SoftwareEng2024.Properties.Resources.DeWatermark_ai_1732732551608;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.loginbtn);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnGuest);
@@ -56,11 +60,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(1012, 628);
+            this.label3.Location = new System.Drawing.Point(1059, 628);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 16);
+            this.label3.Size = new System.Drawing.Size(76, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Explore as Guest ->";
+            this.label3.Text = "About Us ->";
             // 
             // label2
             // 
@@ -94,6 +98,27 @@
             this.btnSignup.UseVisualStyleBackColor = false;
             this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(1003, 720);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Already a member ->";
+            // 
+            // loginbtn
+            // 
+            this.loginbtn.BackColor = System.Drawing.Color.LightGray;
+            this.loginbtn.Location = new System.Drawing.Point(1153, 713);
+            this.loginbtn.Name = "loginbtn";
+            this.loginbtn.Size = new System.Drawing.Size(89, 33);
+            this.loginbtn.TabIndex = 7;
+            this.loginbtn.Text = "Login";
+            this.loginbtn.UseVisualStyleBackColor = false;
+            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -119,5 +144,7 @@
         private System.Windows.Forms.Button btnSignup;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button loginbtn;
+        private System.Windows.Forms.Label label1;
     }
 }

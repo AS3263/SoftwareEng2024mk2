@@ -40,5 +40,12 @@ namespace SoftwareEng2024
         {
 
         }
+
+        private void loginbtn_Click(object sender, EventArgs e)
+        {
+            var loginForm = new login();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

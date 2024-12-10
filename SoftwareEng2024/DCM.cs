@@ -138,6 +138,11 @@ namespace SoftwareEng2024
             isPanelExpanded = !isPanelExpanded;
             timer1.Start();
         }
+
+        private void DCM_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

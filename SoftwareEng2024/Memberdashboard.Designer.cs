@@ -51,9 +51,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblUnreadCount = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblmembershiptype = new System.Windows.Forms.Label();
             this.lblinterest = new System.Windows.Forms.Label();
@@ -62,25 +64,24 @@
             this.button4 = new System.Windows.Forms.Button();
             this.Home = new System.Windows.Forms.Button();
             this.Membership = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Profile_icon = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.Event = new System.Windows.Forms.Button();
             this.CONBTN = new System.Windows.Forms.Button();
-            this.ChatBox_Button = new System.Windows.Forms.Button();
-            this.Profile = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Profile_icon = new System.Windows.Forms.PictureBox();
             this.Home_icon = new System.Windows.Forms.PictureBox();
+            this.ChatBox_Button = new System.Windows.Forms.Button();
             this.Chat_icon = new System.Windows.Forms.PictureBox();
             this.Event_icon = new System.Windows.Forms.PictureBox();
             this.Memebrship_icon = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Profile = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel5.SuspendLayout();
             this.BTNMYBENEFITS.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,7 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Chat_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Event_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Memebrship_icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -155,7 +155,7 @@
             this.button10.BackColor = System.Drawing.Color.IndianRed;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button10.Location = new System.Drawing.Point(484, 232);
+            this.button10.Location = new System.Drawing.Point(462, 356);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(211, 65);
             this.button10.TabIndex = 1;
@@ -360,6 +360,16 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.CHAT_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(401, 112);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(368, 333);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(124)))), ((int)(((byte)(126)))));
@@ -395,15 +405,27 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Together \r\nCulture";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = global::SoftwareEng2024.Properties.Resources.menu;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(22, 126);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(47, 34);
+            this.button3.TabIndex = 17;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(124)))), ((int)(((byte)(126)))));
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel9.Controls.Add(this.lblmembershiptype);
             this.panel9.Controls.Add(this.lblinterest);
-            this.panel9.Location = new System.Drawing.Point(841, 39);
+            this.panel9.Location = new System.Drawing.Point(680, 38);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(491, 118);
+            this.panel9.Size = new System.Drawing.Size(654, 118);
             this.panel9.TabIndex = 16;
             // 
             // lblmembershiptype
@@ -412,7 +434,7 @@
             this.lblmembershiptype.BackColor = System.Drawing.Color.Transparent;
             this.lblmembershiptype.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmembershiptype.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblmembershiptype.Location = new System.Drawing.Point(0, 48);
+            this.lblmembershiptype.Location = new System.Drawing.Point(3, 49);
             this.lblmembershiptype.Name = "lblmembershiptype";
             this.lblmembershiptype.Size = new System.Drawing.Size(195, 23);
             this.lblmembershiptype.TabIndex = 22;
@@ -436,7 +458,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(842, 9);
+            this.label9.Location = new System.Drawing.Point(686, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(168, 30);
             this.label9.TabIndex = 7;
@@ -494,6 +516,26 @@
             this.Membership.Text = "Membership";
             this.Membership.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SoftwareEng2024.Properties.Resources.logout;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 493);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Profile_icon
+            // 
+            this.Profile_icon.Image = global::SoftwareEng2024.Properties.Resources.user;
+            this.Profile_icon.Location = new System.Drawing.Point(22, 77);
+            this.Profile_icon.Name = "Profile_icon";
+            this.Profile_icon.Size = new System.Drawing.Size(44, 34);
+            this.Profile_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Profile_icon.TabIndex = 38;
+            this.Profile_icon.TabStop = false;
+            // 
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(75, 495);
@@ -524,51 +566,6 @@
             this.CONBTN.UseVisualStyleBackColor = true;
             this.CONBTN.Click += new System.EventHandler(this.CONBTN_Click);
             // 
-            // ChatBox_Button
-            // 
-            this.ChatBox_Button.Location = new System.Drawing.Point(72, 124);
-            this.ChatBox_Button.Name = "ChatBox_Button";
-            this.ChatBox_Button.Size = new System.Drawing.Size(118, 32);
-            this.ChatBox_Button.TabIndex = 35;
-            this.ChatBox_Button.Text = "ChatBox";
-            this.ChatBox_Button.UseVisualStyleBackColor = true;
-            this.ChatBox_Button.Click += new System.EventHandler(this.ChatBox_Button_Click);
-            // 
-            // Profile
-            // 
-            this.Profile.Location = new System.Drawing.Point(72, 77);
-            this.Profile.Name = "Profile";
-            this.Profile.Size = new System.Drawing.Size(118, 34);
-            this.Profile.TabIndex = 33;
-            this.Profile.Text = "Profile";
-            this.Profile.UseVisualStyleBackColor = true;
-            this.Profile.Click += new System.EventHandler(this.Profile_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SoftwareEng2024.Properties.Resources.logout;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 493);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 44;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Profile_icon
-            // 
-            this.Profile_icon.Image = global::SoftwareEng2024.Properties.Resources.user;
-            this.Profile_icon.Location = new System.Drawing.Point(22, 77);
-            this.Profile_icon.Name = "Profile_icon";
-            this.Profile_icon.Size = new System.Drawing.Size(44, 34);
-            this.Profile_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Profile_icon.TabIndex = 38;
-            this.Profile_icon.TabStop = false;
-            // 
             // Home_icon
             // 
             this.Home_icon.Image = global::SoftwareEng2024.Properties.Resources.home;
@@ -578,6 +575,16 @@
             this.Home_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Home_icon.TabIndex = 39;
             this.Home_icon.TabStop = false;
+            // 
+            // ChatBox_Button
+            // 
+            this.ChatBox_Button.Location = new System.Drawing.Point(72, 124);
+            this.ChatBox_Button.Name = "ChatBox_Button";
+            this.ChatBox_Button.Size = new System.Drawing.Size(118, 32);
+            this.ChatBox_Button.TabIndex = 35;
+            this.ChatBox_Button.Text = "ChatBox";
+            this.ChatBox_Button.UseVisualStyleBackColor = true;
+            this.ChatBox_Button.Click += new System.EventHandler(this.ChatBox_Button_Click);
             // 
             // Chat_icon
             // 
@@ -609,27 +616,20 @@
             this.Memebrship_icon.TabIndex = 42;
             this.Memebrship_icon.TabStop = false;
             // 
-            // button3
+            // Profile
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::SoftwareEng2024.Properties.Resources.menu;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(22, 126);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(47, 34);
-            this.button3.TabIndex = 17;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Profile.Location = new System.Drawing.Point(72, 77);
+            this.Profile.Name = "Profile";
+            this.Profile.Size = new System.Drawing.Size(118, 34);
+            this.Profile.TabIndex = 33;
+            this.Profile.Text = "Profile";
+            this.Profile.UseVisualStyleBackColor = true;
+            this.Profile.Click += new System.EventHandler(this.Profile_Click);
             // 
-            // pictureBox3
+            // timer1
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(401, 112);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(368, 333);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Memberdashboard
             // 
@@ -653,6 +653,7 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -664,7 +665,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Chat_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Event_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Memebrship_icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

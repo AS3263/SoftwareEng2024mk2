@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Home = new System.Windows.Forms.Button();
             this.Membership = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.benefitsView = new System.Windows.Forms.TreeView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +73,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1361, 699);
             this.panel1.TabIndex = 0;
+            // 
+            // panelContent
+            // 
+            this.panelContent.BackColor = System.Drawing.Color.IndianRed;
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(200, 157);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1161, 542);
+            this.panelContent.TabIndex = 56;
             // 
             // panel2
             // 
@@ -280,14 +289,6 @@
             // 
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelContent
-            // 
-            this.panelContent.BackColor = System.Drawing.Color.IndianRed;
-            this.panelContent.Location = new System.Drawing.Point(206, 163);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1128, 524);
-            this.panelContent.TabIndex = 56;
             // 
             // MyBenefits
             // 

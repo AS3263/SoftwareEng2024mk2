@@ -254,6 +254,7 @@
             this.Event.TabIndex = 36;
             this.Event.Text = "Event";
             this.Event.UseVisualStyleBackColor = true;
+            this.Event.Click += new System.EventHandler(this.Event_Click);
             // 
             // CONBTN
             // 

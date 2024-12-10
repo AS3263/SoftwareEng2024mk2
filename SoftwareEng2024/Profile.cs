@@ -258,5 +258,13 @@ namespace SoftwareEng2024
             isPanelExpanded = !isPanelExpanded;
             timer1.Start();
         }
+
+        private void Event_Click(object sender, EventArgs e)
+        {
+            Events_Main eventsMain = new Events_Main();
+
+            // Show the Events_Main form
+            eventsMain.Show();
+        }
     }
 }

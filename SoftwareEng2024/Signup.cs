@@ -333,7 +333,9 @@ namespace SoftwareEng2024
 
         private void learnmore1_Click(object sender, EventArgs e)
         {
-
+            var membershipForm = new membership();
+            membershipForm.Show();
+            
         }
     }
 }

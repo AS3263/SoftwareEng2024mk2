@@ -262,10 +262,6 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Form2.csEvent_Admin_New">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="Form2.Designer.csEvent_Admin_New" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
