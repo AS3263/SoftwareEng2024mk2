@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics; // for Process.Start
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SoftwareEng2024
@@ -21,64 +17,145 @@ namespace SoftwareEng2024
         private int panel4Width = 150; // Reduced width for panel4
         private int slideSpeed = 10;  // Adjust this for smoothness
         private int gapSize = 10;
+
         public DCM(int memberId)
         {
             InitializeComponent();
-            LoadData();
-            this.memberId = memberId;// Assign the logged-in MemberID
+            this.memberId = memberId; // Assign the logged-in MemberID
+
+            LoadAllContent();
+            LoadMemberAccessedContent();
 
             panelWidth = 200; // Set the desired width
             panel4.Width = 0; // Start with the panel collapsed
             panel4.Visible = true;
             panel1.Left = panel4.Right;
         }
-        private void LoadData()
+
+        private void LoadAllContent()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["UserDatabaseConnection"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT ModuleName, Description, ContentURL FROM DigitalContentModules";
+                // Include ModuleID in the select statement
+                string query = "SELECT ModuleID, ModuleName, Description, ContentURL FROM DigitalContentModules";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
 
                 dataGridView1.DataSource = table;
 
-                // Hide the ContentURL column, keeping it for data access but not display
-                dataGridView1.Columns["ContentURL"].Visible = false;
+                // Hide the ContentURL and ModuleID columns
+                if (dataGridView1.Columns.Contains("ContentURL"))
+                    dataGridView1.Columns["ContentURL"].Visible = false;
+                if (dataGridView1.Columns.Contains("ModuleID"))
+                    dataGridView1.Columns["ModuleID"].Visible = false;
 
-                // Add a Button Column for opening URLs
-                if (dataGridView1.Columns["OpenURLButton"] == null)
+                // Add a Button Column for opening URLs if it doesn't exist
+                if (!dataGridView1.Columns.Contains("OpenURLButton"))
                 {
-                    DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-                    buttonColumn.HeaderText = "Open Content";
-                    buttonColumn.Text = "Go";
-                    buttonColumn.Name = "OpenURLButton";
-                    buttonColumn.UseColumnTextForButtonValue = true;
+                    DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
+                    {
+                        HeaderText = "Open Content",
+                        Text = "Go",
+                        Name = "OpenURLButton",
+                        UseColumnTextForButtonValue = true
+                    };
                     dataGridView1.Columns.Add(buttonColumn);
                 }
 
-                // Auto-size columns for readability
+                // Auto-size columns
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dataGridView1.Columns["Description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                if (dataGridView1.Columns.Contains("Description"))
+                    dataGridView1.Columns["Description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+        }
+
+        private void LoadMemberAccessedContent()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["UserDatabaseConnection"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                    SELECT 
+                        DCM.ModuleName, 
+                        DCM.Description, 
+                        DCM.ContentURL,
+                        MCA.AccessDate
+                    FROM MemberContentAccessed MCA
+                    INNER JOIN DigitalContentModules DCM ON MCA.ModuleID = DCM.ModuleID
+                    WHERE MCA.MemberID = @MemberID
+                    ORDER BY MCA.AccessDate DESC;";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@MemberID", memberId);
+
+                    DataTable dt = new DataTable();
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+
+                    dataGridView2.DataSource = dt;
+
+                    // Hide the ContentURL column
+                    if (dataGridView2.Columns.Contains("ContentURL"))
+                        dataGridView2.Columns["ContentURL"].Visible = false;
+
+                    // Add a Button Column for opening URLs if it doesn't exist
+                    if (!dataGridView2.Columns.Contains("OpenURLButton"))
+                    {
+                        DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
+                        {
+                            HeaderText = "Open Content",
+                            Text = "Go",
+                            Name = "OpenURLButton",
+                            UseColumnTextForButtonValue = true
+                        };
+                        dataGridView2.Columns.Add(buttonColumn);
+                    }
+
+                    // Auto-size columns
+                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    if (dataGridView2.Columns.Contains("Description"))
+                        dataGridView2.Columns["Description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                    // Rename columns for better readability
+                    if (dataGridView2.Columns.Contains("ModuleName"))
+                        dataGridView2.Columns["ModuleName"].HeaderText = "Content Name";
+                    if (dataGridView2.Columns.Contains("AccessDate"))
+                        dataGridView2.Columns["AccessDate"].HeaderText = "Accessed On";
+                }
             }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            // Handle opening content from the main content list
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "OpenURLButton")
             {
                 try
                 {
                     string contentURL = dataGridView1.Rows[e.RowIndex].Cells["ContentURL"].Value?.ToString();
+                    // Get the ModuleID for inserting access record
+                    int moduleID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ModuleID"].Value);
 
                     if (!string.IsNullOrEmpty(contentURL) && Uri.IsWellFormedUriString(contentURL, UriKind.Absolute))
                     {
+                        // Insert record into MemberContentAccessed
+                        InsertAccessRecord(moduleID, memberId);
+
+                        // Refresh the member accessed content grid
+                        LoadMemberAccessedContent();
+
                         // Open the URL in the default web browser
-                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        Process.Start(new ProcessStartInfo
                         {
                             FileName = contentURL,
-                            UseShellExecute = true // Ensures compatibility with modern systems
+                            UseShellExecute = true
                         });
                     }
                     else
@@ -91,7 +168,28 @@ namespace SoftwareEng2024
                     MessageBox.Show($"An error occurred while opening the URL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
 
+        
+
+        private void InsertAccessRecord(int moduleID, int memberID)
+        {
+            // Insert a new record into MemberContentAccessed to track that the member accessed this content
+            string connectionString = ConfigurationManager.ConnectionStrings["UserDatabaseConnection"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string insertQuery = @"
+                    INSERT INTO MemberContentAccessed (ModuleID, MemberID)
+                    VALUES (@ModuleID, @MemberID)";
+
+                using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@ModuleID", moduleID);
+                    cmd.Parameters.AddWithValue("@MemberID", memberID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -103,6 +201,7 @@ namespace SoftwareEng2024
             mainForm.Show();
             this.Hide();
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (isPanelExpanded)
@@ -133,8 +232,6 @@ namespace SoftwareEng2024
             }
         }
 
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             isPanelExpanded = !isPanelExpanded;
@@ -143,7 +240,7 @@ namespace SoftwareEng2024
 
         private void DCM_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Home_Click(object sender, EventArgs e)
@@ -155,7 +252,7 @@ namespace SoftwareEng2024
 
         private void CONBTN_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Profile_Click(object sender, EventArgs e)
@@ -177,6 +274,34 @@ namespace SoftwareEng2024
             chatForm.Show();
             this.Hide();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Handle opening content from the member accessed content list
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && dataGridView2.Columns[e.ColumnIndex].Name == "OpenURLButton")
+            {
+                try
+                {
+                    string contentURL = dataGridView2.Rows[e.RowIndex].Cells["ContentURL"].Value?.ToString();
+
+                    if (!string.IsNullOrEmpty(contentURL) && Uri.IsWellFormedUriString(contentURL, UriKind.Absolute))
+                    {
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = contentURL,
+                            UseShellExecute = true
+                        });
+                    }
+                    else
+                    {
+                        MessageBox.Show("The URL is empty or invalid.", "Invalid URL", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while opening the URL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
-

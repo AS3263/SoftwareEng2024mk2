@@ -100,6 +100,7 @@ namespace SoftwareEng2024
 
                 var memberchatForm = new memberchat(memberId, chatWithMemberId, chatWithName);
                 memberchatForm.Show();
+                this.Hide();
             }
         }
 
@@ -225,6 +226,7 @@ namespace SoftwareEng2024
                 // Open memberchat form
                 memberchat chatForm = new memberchat(memberId, selectedMemberID, contactName);
                 chatForm.Show();
+                this.Hide();
             }
         }
 
