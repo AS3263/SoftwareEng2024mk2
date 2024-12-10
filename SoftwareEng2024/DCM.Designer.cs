@@ -115,6 +115,7 @@
             this.Home.TabIndex = 34;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Membership
             // 
@@ -163,6 +164,7 @@
             this.Event.TabIndex = 36;
             this.Event.Text = "Event";
             this.Event.UseVisualStyleBackColor = true;
+            this.Event.Click += new System.EventHandler(this.Event_Click);
             // 
             // CONBTN
             // 
@@ -172,6 +174,7 @@
             this.CONBTN.TabIndex = 45;
             this.CONBTN.Text = "Digital Content";
             this.CONBTN.UseVisualStyleBackColor = true;
+            this.CONBTN.Click += new System.EventHandler(this.CONBTN_Click);
             // 
             // Home_icon
             // 
@@ -191,6 +194,7 @@
             this.ChatBox_Button.TabIndex = 35;
             this.ChatBox_Button.Text = "ChatBox";
             this.ChatBox_Button.UseVisualStyleBackColor = true;
+            this.ChatBox_Button.Click += new System.EventHandler(this.ChatBox_Button_Click);
             // 
             // Chat_icon
             // 
@@ -230,6 +234,7 @@
             this.Profile.TabIndex = 33;
             this.Profile.Text = "Profile";
             this.Profile.UseVisualStyleBackColor = true;
+            this.Profile.Click += new System.EventHandler(this.Profile_Click);
             // 
             // panel3
             // 

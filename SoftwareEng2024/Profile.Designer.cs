@@ -192,12 +192,13 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(72, 290);
+            this.button4.Location = new System.Drawing.Point(74, 124);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(118, 32);
             this.button4.TabIndex = 46;
             this.button4.Text = "Chat";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Home
             // 
@@ -207,6 +208,7 @@
             this.Home.TabIndex = 34;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Membership
             // 
@@ -245,6 +247,7 @@
             this.btnLogout.TabIndex = 43;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Event
             // 
@@ -264,6 +267,7 @@
             this.CONBTN.TabIndex = 45;
             this.CONBTN.Text = "Digital Content";
             this.CONBTN.UseVisualStyleBackColor = true;
+            this.CONBTN.Click += new System.EventHandler(this.CONBTN_Click);
             // 
             // Home_icon
             // 
@@ -277,12 +281,13 @@
             // 
             // ChatBox_Button
             // 
-            this.ChatBox_Button.Location = new System.Drawing.Point(72, 124);
+            this.ChatBox_Button.Location = new System.Drawing.Point(74, 290);
             this.ChatBox_Button.Name = "ChatBox_Button";
             this.ChatBox_Button.Size = new System.Drawing.Size(118, 32);
             this.ChatBox_Button.TabIndex = 35;
             this.ChatBox_Button.Text = "ChatBox";
             this.ChatBox_Button.UseVisualStyleBackColor = true;
+            this.ChatBox_Button.Click += new System.EventHandler(this.ChatBox_Button_Click);
             // 
             // Chat_icon
             // 
@@ -320,8 +325,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 34);
             this.button1.TabIndex = 33;
-            this.button1.Text = "button1";
+            this.button1.Text = "Profile";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 

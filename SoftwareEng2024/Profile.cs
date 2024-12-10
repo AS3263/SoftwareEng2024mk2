@@ -262,9 +262,48 @@ namespace SoftwareEng2024
         private void Event_Click(object sender, EventArgs e)
         {
             Events_Main eventsMain = new Events_Main();
-
-            // Show the Events_Main form
             eventsMain.Show();
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            Memberdashboard memberDashboard = new Memberdashboard(memberId);
+            memberDashboard.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You have been logged out.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Return to Main page
+            var mainForm = new Main();
+            mainForm.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var chatForm = new chat(memberId);
+            chatForm.Show();
+            this.Hide();
+        }
+
+        private void CONBTN_Click(object sender, EventArgs e)
+        {
+            DCM dcmForm = new DCM(memberId);
+            dcmForm.Show();
+            this.Hide();
+        }
+
+        private void ChatBox_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

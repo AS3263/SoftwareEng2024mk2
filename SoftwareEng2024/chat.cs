@@ -262,5 +262,47 @@ namespace SoftwareEng2024
             isPanelExpanded = !isPanelExpanded;
             timer1.Start();
         }
+
+        private void Profile_Click(object sender, EventArgs e)
+        {
+            Profile PROFILEForm = new Profile(memberId);
+            PROFILEForm.Show();
+            this.Hide();
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            Memberdashboard memberDashboard = new Memberdashboard(memberId);
+            memberDashboard.Show();
+            this.Hide();
+        }
+
+        private void Event_Click(object sender, EventArgs e)
+        {
+            Events_Main eventsMain = new Events_Main();
+            eventsMain.Show();
+        }
+
+        private void CONBTN_Click(object sender, EventArgs e)
+        {
+            DCM dcmForm = new DCM(memberId);
+            dcmForm.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You have been logged out.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Return to Main page
+            var mainForm = new Main();
+            mainForm.Show();
+            this.Hide();
+        }
+
+        private void ChatBox_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

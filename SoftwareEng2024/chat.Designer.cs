@@ -46,7 +46,7 @@ namespace SoftwareEng2024
             this.Chat_icon = new System.Windows.Forms.PictureBox();
             this.Event_icon = new System.Windows.Forms.PictureBox();
             this.Memebrship_icon = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Profile = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -102,7 +102,7 @@ namespace SoftwareEng2024
             this.panel4.Controls.Add(this.Chat_icon);
             this.panel4.Controls.Add(this.Event_icon);
             this.panel4.Controls.Add(this.Memebrship_icon);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.Profile);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 152);
             this.panel4.Name = "panel4";
@@ -126,6 +126,7 @@ namespace SoftwareEng2024
             this.Home.TabIndex = 34;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Membership
             // 
@@ -164,6 +165,7 @@ namespace SoftwareEng2024
             this.btnLogout.TabIndex = 43;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Event
             // 
@@ -173,6 +175,7 @@ namespace SoftwareEng2024
             this.Event.TabIndex = 36;
             this.Event.Text = "Event";
             this.Event.UseVisualStyleBackColor = true;
+            this.Event.Click += new System.EventHandler(this.Event_Click);
             // 
             // CONBTN
             // 
@@ -182,6 +185,7 @@ namespace SoftwareEng2024
             this.CONBTN.TabIndex = 45;
             this.CONBTN.Text = "Digital Content";
             this.CONBTN.UseVisualStyleBackColor = true;
+            this.CONBTN.Click += new System.EventHandler(this.CONBTN_Click);
             // 
             // Home_icon
             // 
@@ -201,6 +205,7 @@ namespace SoftwareEng2024
             this.ChatBox_Button.TabIndex = 35;
             this.ChatBox_Button.Text = "ChatBox";
             this.ChatBox_Button.UseVisualStyleBackColor = true;
+            this.ChatBox_Button.Click += new System.EventHandler(this.ChatBox_Button_Click);
             // 
             // Chat_icon
             // 
@@ -232,14 +237,15 @@ namespace SoftwareEng2024
             this.Memebrship_icon.TabIndex = 42;
             this.Memebrship_icon.TabStop = false;
             // 
-            // button1
+            // Profile
             // 
-            this.button1.Location = new System.Drawing.Point(72, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 34);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Profile.Location = new System.Drawing.Point(72, 77);
+            this.Profile.Name = "Profile";
+            this.Profile.Size = new System.Drawing.Size(118, 34);
+            this.Profile.TabIndex = 33;
+            this.Profile.Text = "Profile";
+            this.Profile.UseVisualStyleBackColor = true;
+            this.Profile.Click += new System.EventHandler(this.Profile_Click);
             // 
             // panel3
             // 
@@ -421,7 +427,7 @@ namespace SoftwareEng2024
         private PictureBox Chat_icon;
         private PictureBox Event_icon;
         private PictureBox Memebrship_icon;
-        private Button button1;
+        private Button Profile;
         private Panel panelContent;
         private Timer timer1;
         private Label label1;

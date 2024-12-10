@@ -61,7 +61,6 @@
             this.lblinterest = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.Home = new System.Windows.Forms.Button();
             this.Membership = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -149,18 +148,20 @@
             this.button8.TabIndex = 1;
             this.button8.Text = "EXPLORE EVENTS";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.IndianRed;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button10.Location = new System.Drawing.Point(462, 356);
+            this.button10.Location = new System.Drawing.Point(500, 361);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(211, 65);
+            this.button10.Size = new System.Drawing.Size(165, 65);
             this.button10.TabIndex = 1;
             this.button10.Text = "GO";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Announcment
             // 
@@ -217,7 +218,7 @@
             this.BTNMYBENEFITS.Controls.Add(this.label4);
             this.BTNMYBENEFITS.Location = new System.Drawing.Point(775, 110);
             this.BTNMYBENEFITS.Name = "BTNMYBENEFITS";
-            this.BTNMYBENEFITS.Size = new System.Drawing.Size(314, 335);
+            this.BTNMYBENEFITS.Size = new System.Drawing.Size(352, 335);
             this.BTNMYBENEFITS.TabIndex = 15;
             this.BTNMYBENEFITS.Paint += new System.Windows.Forms.PaintEventHandler(this.BTNMYBENEFITS_Paint);
             // 
@@ -294,10 +295,12 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.lblUnreadCount);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.button2);
             this.panel4.Location = new System.Drawing.Point(775, 18);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(314, 93);
+            this.panel4.Size = new System.Drawing.Size(352, 93);
             this.panel4.TabIndex = 25;
             // 
             // label8
@@ -306,7 +309,7 @@
             this.label8.BackColor = System.Drawing.Color.IndianRed;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(99, 0);
+            this.label8.Location = new System.Drawing.Point(122, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 25);
             this.label8.TabIndex = 24;
@@ -315,9 +318,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.lblUnreadCount);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Location = new System.Drawing.Point(22, 18);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(373, 93);
@@ -329,7 +330,7 @@
             this.label2.BackColor = System.Drawing.Color.IndianRed;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(99, 2);
+            this.label2.Location = new System.Drawing.Point(66, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 25);
             this.label2.TabIndex = 22;
@@ -341,7 +342,7 @@
             this.lblUnreadCount.BackColor = System.Drawing.Color.Red;
             this.lblUnreadCount.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnreadCount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblUnreadCount.Location = new System.Drawing.Point(234, 44);
+            this.lblUnreadCount.Location = new System.Drawing.Point(218, 44);
             this.lblUnreadCount.Name = "lblUnreadCount";
             this.lblUnreadCount.Size = new System.Drawing.Size(23, 25);
             this.lblUnreadCount.TabIndex = 21;
@@ -352,9 +353,9 @@
             this.button2.BackColor = System.Drawing.Color.IndianRed;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(104, 33);
+            this.button2.Location = new System.Drawing.Point(71, 28);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(162, 51);
+            this.button2.Size = new System.Drawing.Size(188, 56);
             this.button2.TabIndex = 24;
             this.button2.Text = "Go To Chat";
             this.button2.UseVisualStyleBackColor = false;
@@ -467,7 +468,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCoral;
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.Home);
             this.panel1.Controls.Add(this.Membership);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -486,16 +486,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 542);
             this.panel1.TabIndex = 54;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(72, 290);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 32);
-            this.button4.TabIndex = 46;
-            this.button4.Text = "Chat";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.CHAT_Click);
             // 
             // Home
             // 
@@ -578,11 +568,11 @@
             // 
             // ChatBox_Button
             // 
-            this.ChatBox_Button.Location = new System.Drawing.Point(72, 124);
+            this.ChatBox_Button.Location = new System.Drawing.Point(75, 122);
             this.ChatBox_Button.Name = "ChatBox_Button";
             this.ChatBox_Button.Size = new System.Drawing.Size(118, 32);
             this.ChatBox_Button.TabIndex = 35;
-            this.ChatBox_Button.Text = "ChatBox";
+            this.ChatBox_Button.Text = "Chat";
             this.ChatBox_Button.UseVisualStyleBackColor = true;
             this.ChatBox_Button.Click += new System.EventHandler(this.ChatBox_Button_Click);
             // 
@@ -716,6 +706,5 @@
         private System.Windows.Forms.PictureBox Memebrship_icon;
         private System.Windows.Forms.Button Profile;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button4;
     }
 }

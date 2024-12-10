@@ -40,7 +40,7 @@
             this.Event = new System.Windows.Forms.Button();
             this.CONBTN = new System.Windows.Forms.Button();
             this.Home_icon = new System.Windows.Forms.PictureBox();
-            this.ChatBox_Button = new System.Windows.Forms.Button();
+            this.Chat = new System.Windows.Forms.Button();
             this.Chat_icon = new System.Windows.Forms.PictureBox();
             this.Event_icon = new System.Windows.Forms.PictureBox();
             this.Memebrship_icon = new System.Windows.Forms.PictureBox();
@@ -94,7 +94,7 @@
             this.panel2.Controls.Add(this.Event);
             this.panel2.Controls.Add(this.CONBTN);
             this.panel2.Controls.Add(this.Home_icon);
-            this.panel2.Controls.Add(this.ChatBox_Button);
+            this.panel2.Controls.Add(this.Chat);
             this.panel2.Controls.Add(this.Chat_icon);
             this.panel2.Controls.Add(this.Event_icon);
             this.panel2.Controls.Add(this.Memebrship_icon);
@@ -113,6 +113,7 @@
             this.Home.TabIndex = 34;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Membership
             // 
@@ -151,6 +152,7 @@
             this.btnLogout.TabIndex = 43;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Event
             // 
@@ -160,6 +162,7 @@
             this.Event.TabIndex = 36;
             this.Event.Text = "Event";
             this.Event.UseVisualStyleBackColor = true;
+            this.Event.Click += new System.EventHandler(this.Event_Click);
             // 
             // CONBTN
             // 
@@ -169,6 +172,7 @@
             this.CONBTN.TabIndex = 45;
             this.CONBTN.Text = "Digital Content";
             this.CONBTN.UseVisualStyleBackColor = true;
+            this.CONBTN.Click += new System.EventHandler(this.CONBTN_Click);
             // 
             // Home_icon
             // 
@@ -180,14 +184,15 @@
             this.Home_icon.TabIndex = 39;
             this.Home_icon.TabStop = false;
             // 
-            // ChatBox_Button
+            // Chat
             // 
-            this.ChatBox_Button.Location = new System.Drawing.Point(72, 124);
-            this.ChatBox_Button.Name = "ChatBox_Button";
-            this.ChatBox_Button.Size = new System.Drawing.Size(118, 32);
-            this.ChatBox_Button.TabIndex = 35;
-            this.ChatBox_Button.Text = "ChatBox";
-            this.ChatBox_Button.UseVisualStyleBackColor = true;
+            this.Chat.Location = new System.Drawing.Point(72, 124);
+            this.Chat.Name = "Chat";
+            this.Chat.Size = new System.Drawing.Size(118, 32);
+            this.Chat.TabIndex = 35;
+            this.Chat.Text = "Chat";
+            this.Chat.UseVisualStyleBackColor = true;
+            this.Chat.Click += new System.EventHandler(this.ChatBox_Button_Click);
             // 
             // Chat_icon
             // 
@@ -227,6 +232,7 @@
             this.Profile.TabIndex = 33;
             this.Profile.Text = "Profile";
             this.Profile.UseVisualStyleBackColor = true;
+            this.Profile.Click += new System.EventHandler(this.Profile_Click);
             // 
             // panel3
             // 
@@ -326,7 +332,7 @@
         private System.Windows.Forms.Button Event;
         private System.Windows.Forms.Button CONBTN;
         private System.Windows.Forms.PictureBox Home_icon;
-        private System.Windows.Forms.Button ChatBox_Button;
+        private System.Windows.Forms.Button Chat;
         private System.Windows.Forms.PictureBox Chat_icon;
         private System.Windows.Forms.PictureBox Event_icon;
         private System.Windows.Forms.PictureBox Memebrship_icon;

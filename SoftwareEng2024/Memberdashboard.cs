@@ -33,11 +33,10 @@ namespace SoftwareEng2024
 
         private void CONBTN_Click(object sender, EventArgs e)
         {
-            // Create an instance of the DCM form
-            DCM dcmForm = new DCM();
-
-            // Show the DCM form
+            
+            DCM dcmForm = new DCM(memberId);
             dcmForm.Show();
+            this.Hide();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -62,6 +61,7 @@ namespace SoftwareEng2024
             int memberId = this.memberId; // Ensure memberId is available in memberdashboard
             Profile PROFILEForm = new Profile(memberId);
             PROFILEForm.Show();
+            this.Hide();
 
         }
 
@@ -77,6 +77,7 @@ namespace SoftwareEng2024
         {
             MyBenefits benefitsForm = new MyBenefits(memberId);
             benefitsForm.Show();
+            this.Hide();
         }
 
         private void BTNMYBENEFITS_Paint(object sender, PaintEventArgs e)
@@ -172,6 +173,7 @@ namespace SoftwareEng2024
             // Opens the chat search form passing the currently logged in MemberID
             var chatForm = new chat(memberId);
             chatForm.Show();
+            this.Hide();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -272,9 +274,23 @@ namespace SoftwareEng2024
         private void Event_Click(object sender, EventArgs e)
         {
             Events_Main eventsMain = new Events_Main();
-
-            // Show the Events_Main form
             eventsMain.Show();
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Events_Main eventsMain = new Events_Main();
+            eventsMain.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            
+            DCM dcmForm = new DCM(memberId);
+            dcmForm.Show();
+            this.Hide();
+
         }
     }
 }

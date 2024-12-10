@@ -14,16 +14,18 @@ namespace SoftwareEng2024
 {
     public partial class DCM : Form
     {
+        private int memberId;
 
         private bool isPanelExpanded = false;
         private int panelWidth;
         private int panel4Width = 150; // Reduced width for panel4
         private int slideSpeed = 10;  // Adjust this for smoothness
         private int gapSize = 10;
-        public DCM()
+        public DCM(int memberId)
         {
             InitializeComponent();
             LoadData();
+            this.memberId = memberId;// Assign the logged-in MemberID
 
             panelWidth = 200; // Set the desired width
             panel4.Width = 0; // Start with the panel collapsed
@@ -142,6 +144,38 @@ namespace SoftwareEng2024
         private void DCM_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            Memberdashboard memberDashboard = new Memberdashboard(memberId);
+            memberDashboard.Show();
+            this.Hide();
+        }
+
+        private void CONBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Profile_Click(object sender, EventArgs e)
+        {
+            Profile PROFILEForm = new Profile(memberId);
+            PROFILEForm.Show();
+            this.Hide();
+        }
+
+        private void Event_Click(object sender, EventArgs e)
+        {
+            Events_Main eventsMain = new Events_Main();
+            eventsMain.Show();
+        }
+
+        private void ChatBox_Button_Click(object sender, EventArgs e)
+        {
+            var chatForm = new chat(memberId);
+            chatForm.Show();
+            this.Hide();
         }
     }
 }

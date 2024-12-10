@@ -45,5 +45,10 @@ namespace SoftwareEng2024
             communitymemeber.Show();
             this.Hide();
         }
+
+        private void membership_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,14 +32,6 @@ namespace SoftwareEng2024
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvMessages = new System.Windows.Forms.DataGridView();
-            this.lblChatWith = new System.Windows.Forms.Label();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.txtMessage = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.Home = new System.Windows.Forms.Button();
@@ -55,11 +47,17 @@ namespace SoftwareEng2024
             this.Event_icon = new System.Windows.Forms.PictureBox();
             this.Memebrship_icon = new System.Windows.Forms.PictureBox();
             this.Profile = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvMessages = new System.Windows.Forms.DataGridView();
+            this.lblChatWith = new System.Windows.Forms.Label();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.txtMessage = new System.Windows.Forms.TextBox();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMessages)).BeginInit();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Profile_icon)).BeginInit();
@@ -67,6 +65,9 @@ namespace SoftwareEng2024
             ((System.ComponentModel.ISupportInitialize)(this.Chat_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Event_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Memebrship_icon)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMessages)).BeginInit();
+            this.panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,7 +75,6 @@ namespace SoftwareEng2024
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.dgvMessages);
             this.panel1.Controls.Add(this.lblChatWith);
             this.panel1.Controls.Add(this.btnSend);
             this.panel1.Controls.Add(this.txtMessage);
@@ -84,95 +84,6 @@ namespace SoftwareEng2024
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1012, 715);
             this.panel1.TabIndex = 0;
-            // 
-            // dgvMessages
-            // 
-            this.dgvMessages.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMessages.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMessages.Location = new System.Drawing.Point(21, 206);
-            this.dgvMessages.Name = "dgvMessages";
-            this.dgvMessages.RowHeadersWidth = 51;
-            this.dgvMessages.RowTemplate.Height = 24;
-            this.dgvMessages.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMessages.Size = new System.Drawing.Size(961, 451);
-            this.dgvMessages.TabIndex = 22;
-            // 
-            // lblChatWith
-            // 
-            this.lblChatWith.AutoSize = true;
-            this.lblChatWith.BackColor = System.Drawing.Color.IndianRed;
-            this.lblChatWith.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChatWith.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblChatWith.Location = new System.Drawing.Point(24, 172);
-            this.lblChatWith.Name = "lblChatWith";
-            this.lblChatWith.Size = new System.Drawing.Size(114, 31);
-            this.lblChatWith.TabIndex = 21;
-            this.lblChatWith.Text = "chat with";
-            // 
-            // btnSend
-            // 
-            this.btnSend.Location = new System.Drawing.Point(901, 663);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(81, 34);
-            this.btnSend.TabIndex = 2;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // txtMessage
-            // 
-            this.txtMessage.Location = new System.Drawing.Point(21, 663);
-            this.txtMessage.Multiline = true;
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(874, 34);
-            this.txtMessage.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightCoral;
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1012, 158);
-            this.panel3.TabIndex = 31;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::SoftwareEng2024.Properties.Resources.menu;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(12, 105);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 38);
-            this.button2.TabIndex = 11;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(66, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(260, 48);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "CAMBRIDGE";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Brown;
-            this.label2.Location = new System.Drawing.Point(61, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(275, 106);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Together \r\nCulture";
             // 
             // panel2
             // 
@@ -205,6 +116,7 @@ namespace SoftwareEng2024
             this.button4.TabIndex = 46;
             this.button4.Text = "Chat";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Home
             // 
@@ -214,6 +126,7 @@ namespace SoftwareEng2024
             this.Home.TabIndex = 34;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Membership
             // 
@@ -252,6 +165,7 @@ namespace SoftwareEng2024
             this.btnLogout.TabIndex = 43;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Event
             // 
@@ -261,6 +175,7 @@ namespace SoftwareEng2024
             this.Event.TabIndex = 36;
             this.Event.Text = "Event";
             this.Event.UseVisualStyleBackColor = true;
+            this.Event.Click += new System.EventHandler(this.Event_Click);
             // 
             // CONBTN
             // 
@@ -270,6 +185,7 @@ namespace SoftwareEng2024
             this.CONBTN.TabIndex = 45;
             this.CONBTN.Text = "Digital Content";
             this.CONBTN.UseVisualStyleBackColor = true;
+            this.CONBTN.Click += new System.EventHandler(this.CONBTN_Click);
             // 
             // Home_icon
             // 
@@ -328,18 +244,109 @@ namespace SoftwareEng2024
             this.Profile.TabIndex = 33;
             this.Profile.Text = "Profile";
             this.Profile.UseVisualStyleBackColor = true;
+            this.Profile.Click += new System.EventHandler(this.Profile_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightCoral;
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1012, 158);
+            this.panel3.TabIndex = 31;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::SoftwareEng2024.Properties.Resources.menu;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(12, 105);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(48, 38);
+            this.button2.TabIndex = 11;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(66, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(260, 48);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "CAMBRIDGE";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Brown;
+            this.label2.Location = new System.Drawing.Point(61, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(275, 106);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Together \r\nCulture";
+            // 
+            // dgvMessages
+            // 
+            this.dgvMessages.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMessages.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMessages.Location = new System.Drawing.Point(3, 8);
+            this.dgvMessages.Name = "dgvMessages";
+            this.dgvMessages.RowHeadersWidth = 51;
+            this.dgvMessages.RowTemplate.Height = 24;
+            this.dgvMessages.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMessages.Size = new System.Drawing.Size(961, 473);
+            this.dgvMessages.TabIndex = 22;
+            // 
+            // lblChatWith
+            // 
+            this.lblChatWith.AutoSize = true;
+            this.lblChatWith.BackColor = System.Drawing.Color.IndianRed;
+            this.lblChatWith.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChatWith.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblChatWith.Location = new System.Drawing.Point(24, 172);
+            this.lblChatWith.Name = "lblChatWith";
+            this.lblChatWith.Size = new System.Drawing.Size(114, 31);
+            this.lblChatWith.TabIndex = 21;
+            this.lblChatWith.Text = "chat with";
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(901, 663);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(81, 34);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.Location = new System.Drawing.Point(21, 663);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(874, 34);
+            this.txtMessage.TabIndex = 1;
+            // 
+            // panelContent
+            // 
+            this.panelContent.Controls.Add(this.dgvMessages);
+            this.panelContent.Location = new System.Drawing.Point(12, 164);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(997, 551);
+            this.panelContent.TabIndex = 56;
             // 
             // timer1
             // 
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelContent
-            // 
-            this.panelContent.Location = new System.Drawing.Point(12, 164);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(997, 551);
-            this.panelContent.TabIndex = 56;
             // 
             // memberchat
             // 
@@ -352,9 +359,6 @@ namespace SoftwareEng2024
             this.Load += new System.EventHandler(this.memberchat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMessages)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Profile_icon)).EndInit();
@@ -362,6 +366,10 @@ namespace SoftwareEng2024
             ((System.ComponentModel.ISupportInitialize)(this.Chat_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Event_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Memebrship_icon)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMessages)).EndInit();
+            this.panelContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
